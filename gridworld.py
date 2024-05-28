@@ -21,3 +21,15 @@ class Gridworld:
         self.terminals = [(width-1, height-1)]
         self.actions = ['up', 'down', 'left', 'right']
         self.transition_probs = self.create_transition_probs()
+        
+    def create_transition_probs(self):
+        
+        
+        
+        probs = {}
+        for s in self.states:
+            probs[s] = {}
+            for a in self.actions:
+                next_state = self.move(s, a)
+                probs[s][a] = [(1.0, next_state, self.rewards.get(next_state, 0) if next_state in self.terminals else -1)]
+        return probs
