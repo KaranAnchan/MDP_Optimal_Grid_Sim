@@ -33,3 +33,15 @@ class Gridworld:
                 next_state = self.move(s, a)
                 probs[s][a] = [(1.0, next_state, self.rewards.get(next_state, 0) if next_state in self.terminals else -1)]
         return probs
+    
+    def move(self, state, action):
+        x, y = state
+        if action == 'up':
+            y = max(y - 1, 0)
+        elif action == 'down':
+            y = min(y + 1, self.height - 1)
+        elif action == 'left':
+            x = max(x - 1, 0)
+        elif action == 'right':
+            x = min(x + 1, self.width - 1)
+        return (x, y)
