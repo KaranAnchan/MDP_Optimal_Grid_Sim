@@ -24,3 +24,25 @@ def value_iteration(env, gamma=0.99, threshold=0.01):
         if delta < threshold:
             break
     return V
+
+def extract_policy(V, env, gamma=0.99):
+    
+    """
+    Extract the optimal policy based on the optimal value function.
+
+    Args:
+        V (dict): Optimal value function.
+        env (Gridworld): The Gridworld environment.
+        gamma (float): Discount factor.
+
+    Returns:
+        dict: Optimal policy mapping each state to its best action.
+    """
+    
+    policy = {}
+    for s in env.states:
+        if s in env.terminals:
+            policy[s] = 'None'
+        else:
+            policy[s] = max(env.actions, key=lambda a: sum(p * (r + gamma * V[s_next]) for (p, s_next, r) in env.transition_probs[s][a]))
+    return policy
