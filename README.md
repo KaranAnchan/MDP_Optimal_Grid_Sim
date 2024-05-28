@@ -1,4 +1,3 @@
-
 ---
 
 # Gridworld Simulation 🌍🚀
@@ -56,13 +55,13 @@ python main.py
 
 The Optimal Policy Grid visualization indicates the best action to take from each state to reach the terminal state most efficiently.
 
-![Optimal Policy Grid](optimal_policy_grid.png)
+![Optimal Policy Grid](images/optimal_policy_grid.png)
 
 ### Value Function Evolution
 
 This plot shows how the value estimates for each state converge over iterations of the Value Iteration algorithm, demonstrating the algorithm's efficiency and effectiveness.
 
-![Value Function Evolution](value_function_evolution.png)
+![Value Function Evolution](images/value_function_evolution.png)
 
 ## Inferences from Visualizations 🧐
 
