@@ -1,19 +1,22 @@
 class Gridworld:
     
     """
-    Defines the Gridworld environment.
-    
+    Represents a gridworld environment where an agent can move in four directions with specific rewards and terminal states.
+
     Attributes:
-        width (int): Width of the grid.
-        height (int): Height of the grid.
-        states (list): List of all possible states in the grid.
-        rewards (dict): Specifies rewards for each state.
-        terminals (list): List of terminal states.
-        actions (list): Possible actions in the gridworld.
-        transition_probs (dict): Transition probabilities for each action in each state.
+        width (int): The width of the grid.
+        height (int): The height of the grid.
+        states (list of tuples): All possible (x, y) positions in the grid.
+        rewards (dict): Dictionary with terminal state(s) and corresponding rewards.
+        terminals (list of tuples): States where the game ends.
+        actions (list): List of possible actions (up, down, left, right).
+        transition_probs (dict): Transition probabilities for moving from one state to another given an action.
     """
-    
+
     def __init__(self, width, height):
+        
+        """Initialize the gridworld environment with given dimensions."""
+        
         self.width = width
         self.height = height
         self.states = [(x, y) for x in range(width) for y in range(height)]
@@ -24,7 +27,7 @@ class Gridworld:
         
     def create_transition_probs(self):
         
-        
+        """Generate the transition probabilities for each action in each state."""
         
         probs = {}
         for s in self.states:
@@ -35,6 +38,9 @@ class Gridworld:
         return probs
     
     def move(self, state, action):
+        
+        """Calculate the next state given the current state and an action."""
+        
         x, y = state
         if action == 'up':
             y = max(y - 1, 0)
