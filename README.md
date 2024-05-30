@@ -70,10 +70,6 @@ This plot shows how the value estimates for each state converge over iterations 
 
 This project offers a fascinating glimpse into the capabilities of dynamic programming in solving decision-making problems in a defined environment. Feel free to tweak the parameters, explore the code, and observe how changes impact the agent's strategy and efficiency!
 
-## Contributing 🤝
-
-Feel free to fork this project. Enjoy exploring reinforcement learning with this 10-arm testbed simulation! 🌟
-
 ## License 📄
 This project is open-source and available under the MIT License.
 
